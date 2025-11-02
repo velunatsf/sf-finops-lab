@@ -1,0 +1,2 @@
+#IAM roles for AWS Glue table creation and LakeHouse permission setup
+
