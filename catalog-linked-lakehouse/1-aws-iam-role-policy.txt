@@ -1,0 +1,110 @@
+#IAM roles for AWS Glue table creation and LakeHouse permission setup
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "glue:GetCatalog",
+                "glue:GetCatalogs",
+                "glue:GetPartitions",
+                "glue:GetPartition",
+                "glue:GetDatabase",
+                "glue:GetDatabases",
+                "glue:CreateDatabase",
+                "glue:DeleteDatabase",
+                "glue:GetTable",
+                "glue:GetTables",
+                "glue:CreateTable",
+                "glue:UpdateTable",
+                "glue:DeleteTable"
+            ],
+            "Resource": [
+                "arn:aws:glue:us-west-2:388569311563:catalog/*",
+                "arn:aws:glue:us-west-2:388569311563:database/*",
+                "arn:aws:glue:us-west-2:388569311563:table/*"
+            ],
+            "Effect": "Allow",
+            "Sid": "AllowGlueCatalogTableAccess"
+        },
+        {
+            "Action": [
+                "lakeformation:GetDataAccess"
+            ],
+            "Resource": "*",
+            "Effect": "Allow",
+            "Sid": "AllowLakeFormationAccess"
+        },
+        {
+            "Action": [
+                "s3:ListBucket",
+                "s3:GetBucketLocation"
+            ],
+            "Resource": [
+                "arn:aws:s3:::glue-snowflake-lab-388569311563"
+            ],
+            "Effect": "Allow",
+            "Sid": "AllowS3BucketAccess"
+        },
+        {
+            "Action": [
+                "s3:PutObject",
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "s3:PutObjectAcl",
+                "s3:GetObjectVersion",
+                "s3:ListBucketVersions"
+            ],
+            "Resource": [
+                "arn:aws:s3:::glue-snowflake-lab-388569311563/*"
+            ],
+            "Effect": "Allow",
+            "Sid": "AllowS3ObjectAccess"
+        },
+        {
+            "Action": [
+                "s3:GetObject"
+            ],
+            "Resource": "arn:aws:s3:::aws-data-analytics-workshops/*",
+            "Effect": "Allow",
+            "Sid": "AllowPublicReadFromSpecificBucket"
+        },
+        {
+            "Action": [
+                "s3:ListBucket"
+            ],
+            "Resource": "arn:aws:s3:::aws-data-analytics-workshops",
+            "Effect": "Allow",
+            "Sid": "AllowPublicListFromSpecificBucket"
+        },
+        {
+            "Action": [
+                "s3:ListBucket",
+                "s3:GetObject",
+                "s3:PutObject",
+                "s3:DeleteObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::aws-glue-*",
+                "arn:aws:s3:::aws-glue-*/*"
+            ],
+            "Effect": "Allow",
+            "Sid": "AllowGlueSystemBuckets"
+        },
+        {
+            "Action": [
+                "s3:GetBucketVersioning",
+                "s3:GetBucketAcl",
+                "s3:GetBucketPolicy",
+                "s3:GetBucketNotification",
+                "s3:GetBucketCors",
+                "s3:ListAllMyBuckets",
+                "s3:AbortMultipartUpload",
+                "s3:ListMultipartUploadParts"
+            ],
+            "Resource": "*",
+            "Effect": "Allow",
+            "Sid": "AllowAdditionalS3Actions"
+        }
+    ]
+}
