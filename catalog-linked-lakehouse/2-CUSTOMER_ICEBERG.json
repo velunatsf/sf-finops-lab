@@ -1,1 +1,43 @@
+[
+  {
+    "Name": "C_CUSTKEY",
+    "Type": "DECIMAL(38,0)",
+    "Comment": ""
+  },
+  {
+    "Name": "C_NAME",
+    "Type": "VARCHAR(25)",
+    "Comment": ""
+  },
+  {
+    "Name": "C_ADDRESS",
+    "Type": "VARCHAR(40)",
+    "Comment": ""
+  },
+  {
+    "Name": "C_NATIONKEY",
+    "Type": "DECIMAL(38,0)",
+    "Comment": ""
+  },
+  {
+    "Name": "C_PHONE",
+    "Type": "VARCHAR(15)",
+    "Comment": ""
+  },
+  {
+    "Name": "C_ACCTBAL",
+    "Type": "DECIMAL(12,2)",
+    "Comment": ""
+  },
+  {
+    "Name": "C_MKTSEGMENT",
+    "Type": "VARCHAR(10)",
+    "Comment": ""
+  },
+  {
+    "Name": "C_COMMENT",
+    "Type": "VARCHAR(117)",
+    "Comment": ""
+  }
+  ]
 
