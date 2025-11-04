@@ -20,9 +20,9 @@
                 "glue:DeleteTable"
             ],
             "Resource": [
-                "arn:aws:glue:us-west-2:388569311563:catalog/*",
-                "arn:aws:glue:us-west-2:388569311563:database/*",
-                "arn:aws:glue:us-west-2:388569311563:table/*"
+                "arn:aws:glue:us-west-2:999999999999:catalog/*",
+                "arn:aws:glue:us-west-2:999999999999:database/*",
+                "arn:aws:glue:us-west-2:999999999999:table/*"
             ],
             "Effect": "Allow",
             "Sid": "AllowGlueCatalogTableAccess"
@@ -41,7 +41,7 @@
                 "s3:GetBucketLocation"
             ],
             "Resource": [
-                "arn:aws:s3:::glue-snowflake-lab-388569311563"
+                "arn:aws:s3:::glue-snowflake-lab-999999999999"
             ],
             "Effect": "Allow",
             "Sid": "AllowS3BucketAccess"
@@ -56,7 +56,7 @@
                 "s3:ListBucketVersions"
             ],
             "Resource": [
-                "arn:aws:s3:::glue-snowflake-lab-388569311563/*"
+                "arn:aws:s3:::glue-snowflake-lab-999999999999/*"
             ],
             "Effect": "Allow",
             "Sid": "AllowS3ObjectAccess"
