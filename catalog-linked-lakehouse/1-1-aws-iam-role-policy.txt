@@ -1,5 +1,5 @@
 #IAM roles for AWS Glue table creation and LakeHouse permission setup
-
+#Policy Name: Glue_Snowflake_InLinePolicy
 {
     "Version": "2012-10-17",
     "Statement": [
